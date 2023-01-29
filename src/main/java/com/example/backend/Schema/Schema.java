@@ -1,12 +1,13 @@
 package com.example.backend.Schema;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.example.backend.Database.Database;
 import com.example.backend.table.Table;
 
-public class Schema {
+public class Schema implements Serializable{
     // Schemas hold tables
 
     List < Table > tables;
