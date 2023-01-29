@@ -10,7 +10,7 @@ import com.example.backend.storage.BQLStorageBlock;
 public class Database implements Serializable{
     // Schemas hold tables
 
-    List < Schema > schemas;
+    public List < Schema > schemas;
     BQLStorageBlock storageBlock;
     public String databaseName;
 
