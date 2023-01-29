@@ -1,5 +1,8 @@
 package com.example.frontend;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -48,7 +51,7 @@ public class loginGUI implements ActionListener{
         
         JButton button = new JButton("Login");
         button.setBounds(10, 80, 80, 25);
-        button.addActionListener(new GUI());
+        button.addActionListener(this);
 
         panel.add(button);
 
@@ -62,6 +65,10 @@ public class loginGUI implements ActionListener{
     }
     public static void main(String[] args) {
         new loginGUI();
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("hi");
     }
 
 }
