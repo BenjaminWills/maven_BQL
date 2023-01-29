@@ -26,6 +26,6 @@ public class Main {
         Serialisation.saveObjectToDisk(database, storage.storagePath);
         Database db = Serialisation.loadDatabaseFromDisk("/Users/ben/TEST_DIRECTORY/test_database.bql");
 
-        System.out.println(db.schemas.table.tableName);
+        System.out.println(db.schemas.get(0));
     }
 }
