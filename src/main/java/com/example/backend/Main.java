@@ -24,8 +24,8 @@ public class Main {
         table.insertRow(row);
 
         Serialisation.saveObjectToDisk(database, storage.storagePath);
-        Database db = Serialisation.loadDatabaseFromDisk("/Users/ben/TEST_DIRECTORY/test_database.bql");
+        Database db = Serialisation.loadDatabaseFromDisk("/Users/ben/TEST_DIRECTORY/testDatabaseTwo.bql");
 
-        System.out.println(db.schemas.get(0));
+        System.out.println(db.schemas.get(0).tables.get(0).rows.get(0).getHashedRow());
     }
 }
