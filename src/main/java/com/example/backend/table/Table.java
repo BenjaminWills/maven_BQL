@@ -8,11 +8,11 @@ import com.example.backend.user.User;
 
 public class Table implements Serializable{
 
-    List< Row > rows;
-    String tableName;
-    String[] structure;
-    List < User > users;
-    Schema schema;
+    public List< Row > rows;
+    public String tableName;
+    public String[] structure;
+    public List < User > users;
+    public Schema schema;
 
     public Table(String name, String[] structure, Schema schema){
         this.schema = schema;
