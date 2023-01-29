@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public class Row implements Serializable {
-    Table parentTable;
-    String[] keys,correctStructure;
-    Object[] values;
-    String table;
-    HashMap<String,Object> hashedRow;
+    public Table parentTable;
+    public String[] keys,correctStructure;
+    public Object[] values;
+    public String table;
+    public HashMap<String,Object> hashedRow;
 
     public Row(String[] keys, Object[] values, Table parentTable){
         // specify the order of entering keys and values, with a 1 2 1 relationship
