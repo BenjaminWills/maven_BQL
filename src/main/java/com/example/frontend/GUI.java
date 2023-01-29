@@ -1,18 +1,26 @@
 package com.example.frontend;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
-public class GUI {
+public class GUI implements ActionListener{
 
+    private int count = 0;
+    private JLabel label;
+    private JFrame frame;
+    private JPanel panel;
+    
     public GUI(){
 
-        JFrame frame = new JFrame();
+        frame = new JFrame();
 
         JButton button = new JButton("Add databases");
-        JLabel label = new JLabel("Number of Databases: 0");
+        button.addActionListener(this);
 
-        JPanel panel = new JPanel();
+        label = new JLabel("Number of Databases: 0");
+
+        panel = new JPanel();
         panel.setBorder(
             BorderFactory.createEmptyBorder(30, 30, 10, 30)
         );
@@ -30,5 +38,10 @@ public class GUI {
     }
     public static void main(String[] args) {
         new GUI();
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        count ++;
+        label.setText("Number of Databases: " + count);
     }
 }
