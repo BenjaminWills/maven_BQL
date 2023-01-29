@@ -7,6 +7,6 @@ import org.json.JSONObject;
 public class Utilities {
     public static String HashmapToJSON(HashMap<String,Object> rowContents){
         JSONObject json = new JSONObject(rowContents);
-        return json.toString();
+        return json.toString(2);
     }
 }

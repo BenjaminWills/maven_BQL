@@ -27,7 +27,7 @@ public class API {
             Database db = Serialisation.loadDatabaseFromDisk(
                 "/Users/ben/TEST_DIRECTORY/"+databaseName
             );
-            return db.schemas.get(0).tables.get(0).rows.get(0).getHashedRow();
+            return Utilities.HashmapToJSON(db.schemas.get(0).tables.get(0).rows.get(0).getHashedRow());
         });
     }
     public static void main(String[] args) {
