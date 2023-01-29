@@ -10,9 +10,9 @@ import com.example.backend.table.Table;
 public class Schema implements Serializable{
     // Schemas hold tables
 
-    List < Table > tables;
-    Database database;
-    String schemaName;
+    public List < Table > tables;
+    public Database database;
+    public String schemaName;
 
     public Schema(Database database, String schemaName){
         this.database = database;
