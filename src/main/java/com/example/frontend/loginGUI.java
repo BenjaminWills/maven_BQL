@@ -1,16 +1,17 @@
 package com.example.frontend;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class loginGUI {
+public class loginGUI implements ActionListener{
 
     JFrame frame;
     JPanel panel;
-    JLabel userLabel, passwordLabel;
+    JLabel userLabel, passwordLabel, success;
     JTextField userText;
     JPasswordField userPassword;
     
@@ -44,9 +45,20 @@ public class loginGUI {
         userPassword.setBounds(100,50, 165, 25);
 
         panel.add(userPassword);
+        
+        JButton button = new JButton("Login");
+        button.setBounds(10, 80, 80, 25);
+        button.addActionListener(new GUI());
+
+        panel.add(button);
+
+        success = new JLabel("");
+        success.setBounds(10,110,300,25);
+
+        panel.add(success);
+
 
         frame.setVisible(true);
-        
     }
     public static void main(String[] args) {
         new loginGUI();
