@@ -10,16 +10,16 @@ import com.example.backend.table.Table;
 public class Main {
     public static void main(String[] args){
         BQLStorageBlock storage = new BQLStorageBlock("/Users/ben/TEST_DIRECTORY");
-        Database database = new Database(storage, "testDatabaseTwo");
+        Database database = new Database(storage, "testDatabaseThree");
 
         Schema schema = new Schema(database,"schema");
         database.addSchema(schema);
 
-        String[] structure = {"testColumnOne"};
+        String[] structure = {"testColumnTwo"};
         Table table = new Table("table",structure,schema);
         schema.addTable(table);
 
-        String[] rowContents = {"testRowOne"};
+        String[] rowContents = {"testRowTwo"};
         Row row = new Row(structure,rowContents, table);
         table.insertRow(row);
 

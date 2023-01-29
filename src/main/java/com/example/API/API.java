@@ -22,12 +22,12 @@ public class API {
     }
 
     public static void getDatabase(){
-        get("/database", (request, response) -> {
-            // String databaseName = request.params(":databaseName");
+        get("/database/:databaseName", (request, response) -> {
+            String databaseName = request.params(":databaseName");
             Database db = Serialisation.loadDatabaseFromDisk(
-                "/Users/ben/TEST_DIRECTORY/test_database.bql"
+                "/Users/ben/TEST_DIRECTORY/"+databaseName
             );
-            return db.databaseName;
+            return db.schemas.get(0).tables.get(0).rows.get(0).getHashedRow();
         });
     }
     public static void main(String[] args) {
