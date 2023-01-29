@@ -11,9 +11,11 @@ public class Schema {
 
     List < Table > tables;
     Database database;
+    String schemaName;
 
-    public Schema(Database database){
+    public Schema(Database database, String schemaName){
         this.database = database;
+        this.schemaName = schemaName;
         this.tables = initialiseTables();
     }
 
