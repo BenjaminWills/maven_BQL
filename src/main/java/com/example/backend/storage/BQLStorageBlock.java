@@ -9,7 +9,7 @@ import com.example.backend.Database.Database;
 
 public class BQLStorageBlock implements Serializable{
 
-    List < Database > databases;
+    public List < Database > databases;
     public String storagePath;
     
     public BQLStorageBlock(String storagePath){
