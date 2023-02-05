@@ -1,6 +1,6 @@
 package com.example.API;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
 
 import com.example.backend.Database.Database;
 import com.example.backend.storage.Serialisation;
