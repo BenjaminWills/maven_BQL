@@ -5,8 +5,8 @@ import java.util.HashMap;
 import org.json.JSONObject;
 
 public class Utilities {
-    public static String HashmapToJSON(HashMap<String,Object> rowContents){
+    public static JSONObject HashmapToJSON(HashMap<String,Object> rowContents){
         JSONObject json = new JSONObject(rowContents);
-        return json.toString(2);
+        return json;
     }
 }
