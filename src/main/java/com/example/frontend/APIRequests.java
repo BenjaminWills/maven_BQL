@@ -7,19 +7,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.json.JSONObject;
+
 public class APIRequests {
 
-    public static void getRequest(String requestURL) throws IOException{
+    public static String getResponseAsString(String requestURL) throws IOException{
         URL url = new URL(requestURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Content-Type","application/json");
         connection.setRequestProperty("Accept","application/json");
-
-        HttpURLConnection.setFollowRedirects(true);
-
-        connection.setInstanceFollowRedirects(false);
 
         InputStream ip = connection.getInputStream();
  
@@ -31,39 +29,20 @@ public class APIRequests {
         while ((responseSingle = streamReader.readLine()) != null) {
             response.append(responseSingle);
         }
-        String xx = response.toString();
-        System.out.println(xx);
+        String responseString = response.toString();
+        return responseString;
+    }
+
+    public static JSONObject getResponseAsJSONObject(String requestURL) throws IOException{
+        JSONObject JSONResponse = new JSONObject(
+            getResponseAsString(requestURL)
+        );
+        return JSONResponse;
     }
     public static void main(String[] args) throws IOException{
-
-        URL url = new URL("http://127.0.0.1:4567/database/testDatabaseFour.bql");
-
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Content-Type","application/json");
-        connection.setRequestProperty("Accept","application/json");
-
-        HttpURLConnection.setFollowRedirects(true);
-
-        connection.setInstanceFollowRedirects(false);
-
-        InputStream ip = connection.getInputStream();
- 
-        BufferedReader br1 = new BufferedReader(new InputStreamReader(ip));
-
-        StringBuilder response
-                    = new StringBuilder();
-                String responseSingle = null;
- 
-                while ((responseSingle = br1.readLine())
-                       != null) {
-                    response.append(responseSingle);
-                }
-                String xx = response.toString();
-                System.out.println(xx);
-            }
-
+        System.out.println(
+            getResponseAsJSONObject("http://127.0.0.1:4567/database/testDatabaseTwo.bql"));
+}
 }
     
 
