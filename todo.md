@@ -43,6 +43,8 @@
   - user id
   - transaction type
   - table name
+  - execution code
+  - error code
 
 ## table
 
